@@ -10,5 +10,8 @@
     "javascript"
   ],
   "author": "joao garduno joao.garduno@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
