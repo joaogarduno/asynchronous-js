@@ -1,3 +1,5 @@
+// Callbacks
+
 // sumar 2 elementos utilizando callback
 
 // La primera funcion que va a sumar los valores es decir va a realizar algo
@@ -34,3 +36,19 @@ setTimeout(gretting, 2000, 'Joao');
 
 // RESUMEN: Con estos ejemplos podemos entender que tenemos una serie de elementos dentro del lenguaje de programacion que usan por si mismos el concepto de "callbacks"
 // Lo que significa es... tener una funcion que recibe otra funcion para ser ejecutada segun sea el caso.
+
+
+// RETO orden restaurante
+function makingOrder(order){
+    console.log(`Su orden esta lista... aqui tiene su ${order}`);
+}
+
+function prepareOrder(order, orderWork){
+    console.log(`Tomando orden... espere... el pedido es... ${order}`);
+
+    setTimeout(() => {
+        orderWork(order);
+    }, 5000);
+    console.log(`Preparando la orden ${order}`);
+}
+prepareOrder('1 burger, 2 fries and 2 sodas', makingOrder);
