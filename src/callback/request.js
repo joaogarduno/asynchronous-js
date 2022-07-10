@@ -4,6 +4,7 @@ const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 const API = 'https://api.escuelajs.co/api/v1';
 
 // funcion que nos permite recibir la URL (en este caso la API) y el "callback" que va a ser una funcion anonima para recibir la solicitud que nos esta entregando el llamado a esta API
+// Funcion principal para hacer el llamado
 function fetchData(urlApi, infoReturnData){
 
     // Se crea objeto de tipo XMLHttpRequest
@@ -11,7 +12,9 @@ function fetchData(urlApi, infoReturnData){
 
     xhttp.open('GET', urlApi, true);
     xhttp.onreadystatechange = function(event){
+        // validando el estado y el status
         if (xhttp.readyState === 4){
+            // estado para el usuario
             if(xhttp.status === 200){ 
                 // pasamos el callback
                 infoReturnData(null, JSON.parse(xhttp.responseText));
@@ -41,6 +44,8 @@ fetchData(`${API}/products`, (error1, data1) => {
         // Una categoria que se encuentra dentro de la llamada anterior
         fetchData(`${API}/categories/${data2?.category?.id}`, (error3, data3) => {
             if (error3) return console.error(error3);
+
+            // mostrando informacion
             console.log(data1[0]);
             console.log(data2.title);
             console.log(data3.name);
