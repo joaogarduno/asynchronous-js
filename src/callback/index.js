@@ -1,5 +1,20 @@
 // Callbacks
 
+// Definiciones:
+    // 1. Es una funcion que le puedes pasar a otra como argumento y se ejecuta despues de que se haya completado cualquier operacio o alguna operacion.
+    // 2. Un callback de "llamada" es una funcion que se pasa a otra como ARGUMENTO y se ejecuta despues de que se haya completado otra cosa.
+    // 3. Un Callback es una funcion que se pasa como PARAMETRO (parameter) a otras funciones, ademas de que tambien se pasa como ARGUMENTO (argument)
+
+// Diferencias entre PARAMETRO y ARGUMENTO:
+    // 
+    // 
+
+    // EJEMPLO
+    // function sayHi(parameter){
+
+    // }
+    // sayHi(argument);
+
 // sumar 2 elementos utilizando callback
 
 // La primera funcion que va a sumar los valores es decir va a realizar algo
@@ -39,6 +54,10 @@ setTimeout(gretting, 2000, 'Joao');
 // ------------------------------------------------------------------------
 
 
+
+// ------
+// EJEMPLOS:
+
 // RETO orden restaurante utilizando una funcion callback
 function makingOrder(order){
     console.log(`Su orden esta lista... aqui tiene su ${order}`);
@@ -60,9 +79,8 @@ prepareOrder('1 burger, 2 fries and 2 sodas', makingOrder);
 // RETO - Crear un callback que realice las operacion de cada tipo de operador (basico)
 
 // SUMA
-function suma(num1, num2){
+function sumar(num1, num2){
     return num1 + num2;
-    console.log(`Estoy haciendo la operacion`);
 }
 
 // RESTA
@@ -85,13 +103,25 @@ function calcNum(num1, num2, obtenerNumero){
     console.log(`Preparando la operacion de ${num1} y ${num2}`);
     
     setTimeout(() => {
-        obtenerNumero(num1, num2)
-        // obtenerNumero = suma(num1, num2);
-        // obtenerNumero(num1, num2);
-    }, 5000);
-    console.log(`Realizando la operacion de los numeros: ${num1} y ${num2}`);
+        obtenerNumero(num1, num2);
+        console.log('aqui va el resultado');
+    }, 3000);
+    // console.log(`Realizando la operacion de los numeros: ${num1} y ${num2}`);
 }
-calcNum(22, 22, suma);
+calcNum(22, 22, sumar);
+
+
+// ------- otra forma el a la anterior de arriba
+
+// const operation = (num1, num2, getNumber) => {
+//     console.log(`Preparando la operación de ${num1} y ${num2}`);
+    
+//     return setTimeout(() => {
+//         getNumber(num1, num2);
+//         console.log(getNumber);
+//     }, 3000);
+// }
+// operation(22, 22, sumar);
 
 
 
