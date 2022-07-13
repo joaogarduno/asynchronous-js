@@ -1,7 +1,7 @@
 // Callbacks
 
 // Definiciones:
-    // 1. Es una funcion que le puedes pasar a otra como argumento y se ejecuta despues de que se haya completado cualquier operacio o alguna operacion.
+    // 1. Es una funcion que se le puede pasar a otra función como argumento y se ejecuta despues de que se haya completado cualquier operacion o alguna operacion.
     // 2. Un callback de "llamada" es una funcion que se pasa a otra como ARGUMENTO y se ejecuta despues de que se haya completado otra cosa.
     // 3. Un Callback es una funcion que se pasa como PARAMETRO (parameter) a otras funciones, ademas de que tambien se pasa como ARGUMENTO (argument)
 

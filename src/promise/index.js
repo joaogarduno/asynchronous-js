@@ -24,10 +24,10 @@ const cows = 15;
 
 // nuestra promesa
 const countCows = new Promise((resolve, reject) => {
-    if(cows > 10){
+    if(cows < 10){
         resolve(`We have ${cows} cows on the Farm`);
     } else{
-        reject(`The is no cows on the Farm`);
+        reject(`There is no cows on the Farm`);
     }
 });
 
